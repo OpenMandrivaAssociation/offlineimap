@@ -9,7 +9,6 @@ Release: %mkrel %{rel}
 Source: http://www.quux.org/devel/offlineimap/%{name}_%{version}.tar.bz2
 License: GPL
 Group: Networking/Mail
-BuildRoot: %{_tmppath}/%{name}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Url: http://www.quux.org/devel/offlineimap
