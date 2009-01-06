@@ -1,6 +1,6 @@
 %define name offlineimap
 %define version 4.0.15
-%define rel 2
+%define rel 3
 
 Summary: Powerful IMAP/Maildir synchronization and reader support
 Name: %{name}
