@@ -1,19 +1,19 @@
 %define name offlineimap
-%define version 4.0.15
+%define version 6.2.0
 %define rel 3
 
 Summary: Powerful IMAP/Maildir synchronization and reader support
 Name: %{name}
 Version: %{version}
 Release: %mkrel %{rel}
-Source: http://www.quux.org/devel/offlineimap/%{name}_%{version}.tar.bz2
+Source: %{name}_%{version}.orig.tar.gz
 License: GPL
 Group: Networking/Mail
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
-Url: http://www.quux.org/devel/offlineimap
-Buildrequires: python-devel >= %{pyver} gzip
+Url: http://software.complete.org/software/projects/show/offlineimap
+Buildrequires: python-devel >= %{pyver}
 Requires: python >= %{pyver}
 
 %description
@@ -35,20 +35,14 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 python setup.py install --root=$RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
-cp offlineimap.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc UPGRADING README COPYRIGHT 
+%doc UPGRADING COPY* FAQ.html
 %doc offlineimap.conf*
-%doc manual.*
 %{_bindir}/offlineimap
 %{py_puresitedir}/offlineimap
 %{py_puresitedir}/*.egg-info
-%{_mandir}/man1/offlineimap.1*
-
-
