@@ -1,15 +1,10 @@
-%define name offlineimap
-%define version 6.2.0
-%define rel 5
-
 Summary: Powerful IMAP/Maildir synchronization and reader support
-Name: %{name}
-Version: %{version}
-Release: %mkrel %{rel}
-Source: %{name}_%{version}.orig.tar.gz
+Name: offlineimap
+Version: 6.4.0
+Release: 1
+Source: %{name}-%{version}.tar.gz
 License: GPL
 Group: Networking/Mail
-BuildRoot: %{_tmppath}/%{name}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Url: http://software.complete.org/software/projects/show/offlineimap
@@ -27,21 +22,17 @@ you want to use a mail reader that does not have IMAP support, has poor
 IMAP support, or does not provide disconnected operation.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n nicolas33-%{name}-94450e9
 
 %build
 python setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT
 python setup.py install --root=$RPM_BUILD_ROOT
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc UPGRADING COPY* FAQ.html
+%doc COPY*
 %doc offlineimap.conf*
 %{_bindir}/offlineimap
 %{py_puresitedir}/offlineimap
