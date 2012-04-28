@@ -1,8 +1,8 @@
 Summary: Powerful IMAP/Maildir synchronization and reader support
 Name: offlineimap
-Version: 6.5.2
+Version: 6.5.3.1
 Release: 1
-Source0: https://github.com/downloads/spaetz/offlineimap/offlineimap-v%{version}.tar.gz
+Source0: https://github.com/downloads/spaetz/offlineimap/offlineimap-%{version}.tar.gz
 License: GPL
 Group: Networking/Mail
 Prefix: %{_prefix}
@@ -22,7 +22,7 @@ you want to use a mail reader that does not have IMAP support, has poor
 IMAP support, or does not provide disconnected operation.
 
 %prep
-%setup -q -n spaetz-%{name}-091272d
+%setup -q -n spaetz-%{name}-ebd5fe2/
 
 %build
 python setup.py build
@@ -31,7 +31,6 @@ python setup.py build
 python setup.py install --root=%{buildroot}
 
 %files
-%defattr(-,root,root)
 %doc COPY*
 %doc offlineimap.conf*
 %{_bindir}/offlineimap
