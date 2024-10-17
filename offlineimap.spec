@@ -6,7 +6,7 @@ Source0: https://github.com/OfflineIMAP/offlineimap3/archive/refs/tags/v%{versio
 License: GPL
 Group: Networking/Mail
 BuildArch: noarch
-Url: http://www.complete.org/OldSoftwareSites
+Url: https://www.complete.org/OldSoftwareSites
 BuildRequires: python-devel
 BuildRequires: python%{pyver}dist(imaplib2)
 BuildRequires: python%{pyver}dist(rfc6555)
